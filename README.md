@@ -5,4 +5,4 @@ If you would like to see this in action before use please stop by [Axiova's Twit
 
 Before using you must install/update [Node.JS version 16.0](https://nodejs.org/en/download/current/) (Subject to change as development continues). 
 
-Work on this will only continue as there is a need. If you have feature requests/find bugs/or want to see more in the future please let me know. I can also be bribed to continue work on this if you buy me a beer. [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](XNUJQACTEAUR8)
+Work on this will only continue as there is a need. If you have feature requests/find bugs/or want to see more in the future please let me know. I can also be bribed to continue work on this if you buy me a beer. [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XNUJQACTEAUR8)
