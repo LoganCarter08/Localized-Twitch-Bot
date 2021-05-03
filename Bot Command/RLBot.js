@@ -1,5 +1,4 @@
 // found here: https://www.twilio.com/blog/creating-twitch-chat-bots-with-node-js
-// token here: https://twitchapps.com/tmi/#access_token=k8xagcst97f9qbfz7tcztb97fd0d75&scope=chat%3Aread+chat%3Aedit+channel%3Amoderate+whispers%3Aread+whispers%3Aedit+channel_editor&token_type=bearer
 // documentation is here: https://github.com/tmijs/docs/blob/gh-pages/_posts/v1.4.2/2019-03-03-Events.md#subscription
 
 const tmi = require('tmi.js');
