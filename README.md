@@ -2,7 +2,7 @@
 
 The following is intended to be an easy to use bot for Twitch that will extend what is possible from existing third party apps such as in game interactions and audio/visual cues. The intent is to create a bot so easy any computer skill level streamer can operate. 
 
-If you would like to see this in action before use please stop by [Axiova's Twitch Channel](twitch.tv/axiova) as he is my test subject for new features. 
+If you would like to see this in action before using please stop by [Axiova's Twitch Channel](twitch.tv/axiova) as he is my test subject for new features. 
 
 Before using you must install/update [Node.JS version 16.0](https://nodejs.org/en/download/current/) (Subject to change as development continues). 
 
