@@ -1,6 +1,6 @@
 # Localized-Twitch-Bot
 
-The following is intended to be an easy to use bot for Twitch that will extend what is possible from existing third party apps such as in game interactions and audio/visual cues. The intent is to create a bot so easy any computer skill level streamer can operate. 
+The following is intended to be an easy to use bot for Twitch that will extend what is possible from existing third party apps such as in game interactions and audio/visual cues. The intent is to create a bot so easy any computer skill level streamer can operate. Designed for Windows use only at the moment. 
 
 If you would like to see this in action before using please stop by [Axiova's Twitch Channel](twitch.tv/axiova) as he is my test subject for new features. 
 
@@ -12,6 +12,8 @@ Work on this will only continue as there is a need. If you have feature requests
 
 ### Current Capabilities
 1. Hardcoded bits for buttons to allow for chat to cheer bits to press buttons on your keyboard or mouse to manipulate your game
+2. Easy to use installer
+3. Starts up with Windows
 
 ### Planned Capabilities
 1. Have a menu to allow for easy bits for buttons configuration
@@ -22,6 +24,8 @@ Work on this will only continue as there is a need. If you have feature requests
 6. Support for watch time and (maybe) follow time
 7. Allow login with twitch account instead of OAuth
 8. Support for bits for serial communication (allow for chat to control things in streamer's room via Arduino)
+9. Better installer that can detect failures and steps to fix
+10. Better GUI for ease of use
 
 ### Usage:
 1. Download latest release in the release menu (will link once one is up, if you are reading this you're too early)
