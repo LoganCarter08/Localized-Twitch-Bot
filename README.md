@@ -21,6 +21,7 @@ Work on this will only continue as there is a need. If you have feature requests
 5. Menu to allow for simple chat commands
 6. Support for watch time and (maybe) follow time
 7. Allow login with twitch account instead of OAuth
+8. Support for bits for serial communication (allow for chat to control things in streamer's room via Arduino)
 
 ### Usage:
 1. Download latest release in the release menu (will link once one is up, if you are reading this you're too early)
