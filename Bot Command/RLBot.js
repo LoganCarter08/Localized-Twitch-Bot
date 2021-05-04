@@ -53,7 +53,7 @@ function returnRandomRLKey() {
 		case 4:
 			return "space";
 		case 5:
-			return ["mouse", "left"];
+			return "q";
 		case 6:
 			return "shift";
 		case 7:
@@ -114,8 +114,8 @@ function getCommandByBits(bits) {
 			return {
 				commandName : "boost for 10 seconds!",
 				func : function() {
-					robot.mouseToggle("down", "left");
-					setTimeout(function(){ robot.mouseToggle("up", "left"); }, 10000);
+					robot.keyToggle("q", "down");
+					setTimeout(function(){ robot.keyToggle("q", "up"); }, 10000);
 				}
 			};
 		// 500 bits = 30 seconds of random buttons being pressed
@@ -195,7 +195,6 @@ client.on('message', (channel, tags, message, self) => {
 		} else if (command === 'start') {
 			bitsForButtonsOn = true;
 		}
-<<<<<<< HEAD
 	} 
 	
 	if (command === 'bits') {
@@ -207,8 +206,6 @@ client.on('message', (channel, tags, message, self) => {
 			'100 bits = boost held down for 10 seconds. ' +
 			'500+ bits = 30 seconds of random buttons being pressed.'
 		);
-=======
->>>>>>> added an installer, runner, and uninstaller
 	}
 });
 
