@@ -193,6 +193,9 @@ client.on('message', (channel, tags, message, self) => {
 	//	client.say(channel, 'no');
 	//}
 	
+	
+	// only channel owner can turn on of off. Test the output for mods and allow that
+	// add this to the new config menu soon
 	if (tags.username === loginClass.channel) { // || tags.user-type === 'mod') {
 		if (command === 'stop') {
 			bitsForButtonsOn = false;
