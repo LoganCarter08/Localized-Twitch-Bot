@@ -26,6 +26,7 @@ Work on this will only continue as there is a need. If you have feature requests
 8. Support for bits for serial communication (allow for chat to control things in streamer's room via Arduino)
 9. Better installer that can detect failures and steps to fix
 10. Better GUI for ease of use
+11. Allow for chat to get current Spotify songs, skip songs, etc
 
 ### Usage:
 1. Download latest release in the release menu (will link once one is up, if you are reading this you're too early)
