@@ -43,8 +43,7 @@ namespace installer {
 			// move files from this original to run folder 
             try {
                 Directory.Move(sourceDirectory + @"\Files", destinationDirectory);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 Console.WriteLine(e.Message);
             }
 			
@@ -53,8 +52,7 @@ namespace installer {
 			
 			
 			Process proc = null;
-            try
-            {
+            try {
                 string batDir = string.Format(@"C:\Users\" + Environment.UserName + @"\Documents\Localized Twitch Bot\Files");
                 proc = new Process();
                 proc.StartInfo.WorkingDirectory = batDir;
@@ -62,16 +60,13 @@ namespace installer {
                 proc.StartInfo.CreateNoWindow = true;
                 proc.Start();
                 proc.WaitForExit();
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Console.WriteLine(ex.StackTrace.ToString());
             }
 			
 			
 			proc = null;
-            try
-            {
+            try {
                 string batDir = string.Format(@"C:\Users\" + Environment.UserName + @"\Documents\Localized Twitch Bot\Files");
                 proc = new Process();
                 proc.StartInfo.WorkingDirectory = batDir;
@@ -79,9 +74,7 @@ namespace installer {
                 proc.StartInfo.CreateNoWindow = false;
                 proc.Start();
                 proc.WaitForExit();
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Console.WriteLine(ex.StackTrace.ToString());
             }
         }
