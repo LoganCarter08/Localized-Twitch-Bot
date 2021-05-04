@@ -54,7 +54,7 @@
 		<br><br>
 		
 		<label for="chann">Channel:</label>
-		<input type="text" id="chann" name="chann">
+		<input type="text" id="chan" name="chan">
 		<p>This is your Twitch channel name the bot needs to hangout at. (i.e. Axiova)</p>
 		
 		<input type="submit" value="Submit" class="powerButton">
@@ -77,7 +77,7 @@
 		};
 		
 		function callCurrentStatus() {
-			setInterval(currentStatus, 100);
+			setTimeout(currentStatus, 100);
 		}
 		
 		function currentStatus() {
@@ -86,7 +86,7 @@
 				
 				document.getElementById("uname").value = obj.username;
 				document.getElementById("pass").value = obj.password;
-				document.getElementById("chann").value = obj.channel;
+				document.getElementById("chnn").value = obj.channel;
 				
 				//console.log(obj.status);
 				// change to status codes eventually

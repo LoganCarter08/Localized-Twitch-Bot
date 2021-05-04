@@ -189,7 +189,11 @@ client.on('message', (channel, tags, message, self) => {
 	const args = message.slice(1).split(' ');
 	const command = args.shift().toLowerCase();
 	
-	if (tags.user-type === 'mod') {
+	//if (command === 'help') {
+	//	client.say(channel, 'no');
+	//}
+	
+	if (tags.username === loginClass.channel) { // || tags.user-type === 'mod') {
 		if (command === 'stop') {
 			bitsForButtonsOn = false;
 		} else if (command === 'start') {
