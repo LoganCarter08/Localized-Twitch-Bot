@@ -14,19 +14,20 @@ Work on this will only continue as there is a need. If you have feature requests
 1. Hardcoded bits for buttons to allow for chat to cheer bits to press buttons on your keyboard or mouse to manipulate your game
 2. Easy to use installer
 3. Starts up with Windows
+4. Text to speech - Allows viewers to donate bits to have their message read out loud
+5. Subathon support - Each sub adds an hour to the streamer's time to stay live with a !timeleft command to check remaining time
 
 ### Planned Capabilities
 1. Have a menu to allow for easy bits for buttons configuration
 2. Include quick swappable configurations in aforementioned menu
 3. Allow for a free button pressing menu to allow chat to "play" games. Think of Twitch Plays Pokemon
-4. Customizable text to speech options with easy to use menu
-5. Menu to allow for simple chat commands
-6. Support for watch time and (maybe) follow time
-7. Allow login with twitch account instead of OAuth
-8. Support for bits for serial communication (allow for chat to control things in streamer's room via Arduino)
-9. Better installer that can detect failures and steps to fix
-10. Better GUI for ease of use
-11. Allow for chat to get current Spotify songs, skip songs, etc
+4. Menu to allow for simple chat commands
+5. Support for watch time and (maybe) follow time
+6. Allow login with twitch account instead of OAuth
+7. Support for bits for serial communication (allow for chat to control things in streamer's room via Arduino)
+8. Better installer that can detect failures and steps to fix
+9. Better GUI for ease of use
+10. Allow for chat to get current Spotify songs, skip songs, etc
 
 ### Usage:
 1. Download latest release in the release menu (will link once one is up, if you are reading this you're too early)
