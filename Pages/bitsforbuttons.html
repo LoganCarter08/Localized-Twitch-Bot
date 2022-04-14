@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bits for Buttons</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+	
+	<style>
+		.powerButton {
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+		
+		.powerButton {
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			background-color: grey;
+		}
+	</style>
+	<h1> Please Enter the Login Credentials of Your Bot Here</h1>
+</head>
+
+<body onload="callCurrentStatus()">
+	<button id="home" class="powerButton" onclick="location.href='/';">Home</button>
+	<p id="status">Current Status: Running</p>
+	<button id="power" onclick="togglePower()" class="powerButton">Turn Bits for Buttons On!</button>
+	
+	<div id="tableContainer">
+
+	</div>
+	
+	<button id="addRow" onclick="addRow()" class="powerButton">Add Command</button>
+	<button id="apply" onclick="apply()" class="powerButton">Apply</button>
+	<script>
+		
+        var obj;
+		var path = 'http://localhost:6969';
+		
+		function addRow() {
+			var size = document.getElementById("bfbTable").rows.length;
+			var table = document.getElementById("bfbTable");
+			var row = table.insertRow(size);
+			size = size - 1;
+			var amount = row.insertCell(0);
+			amount.innerHTML = '<input type="text" id="amount' + size + '" name="amount" value="Cost">';
+			var button = row.insertCell(1);
+			button.innerHTML = '<input type="text" id="button' + size + '" name="key" value="Key to Press">'
+			var hold = row.insertCell(2);
+			hold.innerHTML = '<select name="hold" id="hold' + size + '">' +
+					'<option value="press">Press</option>' +
+					'<option value="hold">Hold</option>';
+			var time = row.insertCell(3);
+			time.innerHTML = '<input type="text" id="time' + size + '" name="time" value="Length to Hold">';
+			var description = row.insertCell(4);
+			description.innerHTML = '<input type="text" id="description' + size + '" name="description" value="Description">';
+			var deleteButton = row.insertCell(5);
+			deleteButton.innerHTML = '<button id="deleteRow' + size + '" onclick="deleteRow(' + size + ')" >Remove</button>';
+		}
+		
+		function deleteRow(row) {
+			document.getElementById("bfbTable").deleteRow(row + 1);
+		}
+		
+		function loadTable() {
+			// send a request to the server asking for the stored bfb data then output it to a table	
+			var tab = '<table id="bfbTable">';
+			tab = tab + "<tr> " +
+					"<th>Bit Amount</th> " + 
+					"<th>Button Pressed</th> " +
+					"<th>Press or Hold</th> " +
+					"<th>Hold Time (seconds)</th> " +
+					"<th>In Game Action (description for !bits command)</th> " +
+				"</tr>";
+
+			axios.get(path + '/loadbfb').then((res) => {
+                obj = res.data;
+				amounts = obj.amounts.toString().split("`");
+				buttons = obj.buttons.toString().split("`");
+				hold = obj.hold.toString().split("`");
+				times = obj.times.toString().split("`");
+				descriptions = obj.descriptions.toString().split("`");
+				
+				for (i = 0; i < amounts.length - 1; i++) {
+					tab = tab + "<tr>";
+					tab = tab + '<td><input type="text" id="amount' + i + '" name="amount" value="' + amounts[i] + '"></td>';
+					tab = tab + '<td><input type="text" id="button' + i + '" name="key" value="' + buttons[i] + '"></td>';
+					tab = tab + '<td><select name="hold" id="hold' + i + '">';
+					if (hold[i] == 'hold') {
+						tab = tab + '<option value="press">Press</option>';
+						tab = tab + '<option value="hold" selected>Hold</option>';
+					} else {
+						tab = tab + '<option value="press" selected>Press</option>';
+						tab = tab + '<option value="hold">Hold</option>';
+					}
+					tab = tab + '</td>';
+					tab = tab + '<td><input type="text" id="time' + i + '" name="time" value="' + times[i] + '"></td>';
+					tab = tab + '<td><input type="text" id="description' + i + '" name="description" value="' + descriptions[i] + '"></td>';
+					tab = tab + '<td><button id="deleteRow' + i + '" onclick="deleteRow(' + i + ')" >Remove</button></td>';
+					tab = tab + '</tr>';
+				}
+				
+				tab = tab + '</table>';
+				document.getElementById("tableContainer").innerHTML = tab;
+			});
+		}
+
+		function togglePower() {
+            axios.get(path + '/togglebfb').then((res) => {
+                obj = res.data;
+				var curPower = '';
+				if (obj.power) {
+					curPower = 'Off!';
+					document.getElementById("power").style.background = "red";
+				} else {
+					curPower = 'On!';
+					document.getElementById("power").style.background = "green";
+				}
+				document.getElementById('power').innerText = 'Turn Bits For Buttons ' + curPower;
+			});
+		};
+		
+		function apply() {
+			var amounts = "amounts=";
+			var buttons = "&buttons=";
+			var hold = "&hold=";
+			var times = "&times=";
+			var descriptions = "&descriptions=";
+			
+			for (i = 0; i < document.getElementById("bfbTable").rows.length - 1; i++) { // rows. Columns will be static length
+				// amount
+				amounts = amounts + document.getElementById("amount" + i).value + "`";
+				// button 
+				buttons = buttons+ document.getElementById("button" + i).value + "`";
+				// press or hold 
+				hold = hold + document.getElementById("hold" + i).value + "`";
+				// time 
+				times = times + document.getElementById("time" + i).value + "`";
+				// description 
+				descriptions = descriptions + document.getElementById("description" + i).value + "`";
+			}
+			result = amounts + buttons + hold + times + descriptions;
+            axios.get(path + '/applybfb?' + result).then((res) => {
+				
+			});
+		};
+		
+		function callCurrentStatus() {
+			loadTable();
+			setInterval(currentStatus, 100);
+		}
+		
+		function currentStatus() {
+            axios.get(path + '/status').then((res) => {
+                obj = res.data;
+				
+				//console.log(obj.status);
+				// change to status codes eventually
+				document.getElementById("status").innerHTML = 'Current Status: ' + obj.status;
+				if (obj.status == 'Connected') {
+					document.getElementById("status").style.color = 'green';
+				} else {
+					document.getElementById("status").style.color = 'red';
+				}
+				
+				if (obj.power) {
+					curPower = 'Off!';
+					document.getElementById("power").style.background = "red";
+				} else {
+					curPower = 'On!';
+					document.getElementById("power").style.background = "green";
+				}
+				document.getElementById('power').innerText = 'Turn Bits For Buttons ' + curPower;
+			});
+		};
+    </script>
+</body>
+
+</html>
