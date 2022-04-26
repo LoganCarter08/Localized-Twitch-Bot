@@ -1,3 +1,5 @@
+
+
 // this is for debugging purposes. We need to create a generic userstate object or store real ones for a unit test 
 function onCheer(userstate) {
 	handleBFBCheered(userstate);

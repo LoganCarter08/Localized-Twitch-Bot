@@ -1,3 +1,5 @@
+support = require('../supportFunctions.js');
+
 // this is for debugging purposes. We need to create a generic tags object or store real ones for a unit test 
 function onMessage(message, tags) {
 	if (!message.startsWith('!')) {
@@ -14,17 +16,15 @@ function onMessage(message, tags) {
 	if (tags.badges.broadcaster || tags.mod) { // || tags.user-type === 'mod') {
 		if (command === 'stopbfb') {
 			bitsForButtonsOn = false;
-			sayToChannel(tags.username + ' has turned bits for buttons off!');
+			support.sayToChannel(tags.username + ' has turned bits for buttons off!');
 		} else if (command === 'startbfb') {
 			bitsForButtonsOn = true;
-			sayToChannel(tags.username + ' has turned bits for buttons on!');
+			support.sayToChannel(tags.username + ' has turned bits for buttons on!');
 		}
 	} 
 	
 	if (command === 'bits') {
-		client.say(loginClass.channel,
-			getBitsForButtonsDescriptions()
-		);
+		support.sayToChannel(getBitsForButtonsDescriptions());
 	} else if (command.split(" ")[0] === 'bittest' && (tags.mod || tags.badges.broadcaster)) {
 		var obj = getCommandByBits(parseInt(message.split(' ')[1]));
 		if (bitsForButtonsOn) {

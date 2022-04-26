@@ -49,12 +49,7 @@ require('./Source/Requests/togglebfb.js');
 require('./Source/Requests/updatelogin.js');
 
 
-function sayToChannel(outputText) {
-	if (!DEBUG)
-		client.say(loginClass.channel, outputText);
-	else 
-		console.log(outputText);
-}
+
 
 
 // output periodic messages

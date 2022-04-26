@@ -1,3 +1,5 @@
+// support = require('../supportFunctions.js');
+
 function onSubscription(userstate) {
 	fs.appendFileSync(logPath, userstate.username + ' has subscribed!\n');
 } 

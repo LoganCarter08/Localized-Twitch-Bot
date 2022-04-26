@@ -22,3 +22,68 @@ Starting at 19:57:26 on 4-22-2022
 
 
 Starting at 20:36:36 on 4-22-2022
+
+
+Starting at 18:24:30 on 4-25-2022
+Ran into an error trying to load bits for buttons settings
+	Error: ENOENT: no such file or directory, open 'C:\Users\Logan\Documents\CODE\JS\Localized-Twitch-Bot/Configs//bfb/bitsForButtons.json'
+
+
+Starting at 18:25:43 on 4-25-2022
+Ran into an error trying to load bits for buttons settings
+	Error: ENOENT: no such file or directory, open 'C:\Users\Logan\Documents\CODE\JS\Localized-Twitch-Bot/Configs//bfb/bitsForButtons.json'
+
+
+Starting at 18:26:29 on 4-25-2022
+Ran into an error trying to load bits for buttons settings
+	Error: ENOENT: no such file or directory, open 'C:\Users\Logan\Documents\CODE\JS\Localized-Twitch-Bot/Configs//bfb/bitsForButtons.json'
+
+
+Starting at 18:31:28 on 4-25-2022
+
+
+Starting at 18:31:39 on 4-25-2022
+
+
+Starting at 18:31:49 on 4-25-2022
+
+
+Starting at 18:32:24 on 4-25-2022
+Ran into an error trying to load bits for buttons settings
+	Error: ENOENT: no such file or directory, open 'C:\Users\Logan\Documents\CODE\JS\Localized-Twitch-Bot/Configs//bfb/bitsForButtons.json'
+
+
+Starting at 18:33:5 on 4-25-2022
+Applying new bfb settings: {"amount":"5`","button":"y`","hold":"press`","time":"1`","description":"Description`"}
+
+
+Starting at 18:35:45 on 4-25-2022
+Ran into an error trying to load bits for buttons settings
+	Error: ENOENT: no such file or directory, open '../../C:\Users\Logan\Documents\CODE\JS\Localized-Twitch-Bot/Configs//bfb/bitsForButtons.json'
+
+
+Starting at 18:37:32 on 4-25-2022
+Applying new bfb settings: {"amount":"Cost`","button":"Key to Press`","hold":"press`","time":"Length to Hold`","description":"Description`"}
+Ran into an error trying to apply bits for buttons settings
+	Error: ENOENT: no such file or directory, open '../../C:\Users\Logan\Documents\CODE\JS\Localized-Twitch-Bot/Configs//bfb/bitsForButtons.json'
+
+
+Starting at 18:38:10 on 4-25-2022
+Applying new bfb settings: {"amount":"Cost`","button":"Key to Press`","hold":"press`","time":"Length to Hold`","description":"Description`"}
+Ran into an error trying to apply bits for buttons settings
+	Error: ENOENT: no such file or directory, open '../../C:\Users\Logan\Documents\CODE\JS\Localized-Twitch-Bot/Configs//bfb/bitsForButtons.json'
+
+
+Starting at 18:38:42 on 4-25-2022
+Applying new bfb settings: {"amount":"Cost`","button":"Key to Press`","hold":"press`","time":"Length to Hold`","description":"Description`"}
+Applying new bfb settings: {"amount":"Cost`","button":"Key to Press`","hold":"press`","time":"Length to Hold`","description":"Description`"}
+
+
+Starting at 18:39:33 on 4-25-2022
+Applying new bfb settings: {"amount":"Cost`","button":"Key to Press`","hold":"press`","time":"Length to Hold`","description":"Description`"}
+
+
+Starting at 20:9:39 on 4-25-2022
+
+
+Starting at 20:10:14 on 4-25-2022

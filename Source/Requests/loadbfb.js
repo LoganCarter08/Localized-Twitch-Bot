@@ -1,7 +1,9 @@
+support = require('../supportFunctions.js');
+
 router.get("/loadbfb", function(req, res) {
 	// add the ability to create presets for different games
 	try {
-		if (!fs.existsSync(configPath + 'bitsForButtons.json')) {
+		if (!fs.existsSync(configPath + 'bfb/bitsForButtons.json')) {
 			let datas = {
 				amount : "", 
 				button : "", 
@@ -11,10 +13,10 @@ router.get("/loadbfb", function(req, res) {
 			}
 
 			datas = JSON.stringify(datas);
-			fs.writeFileSync(configPath + 'bitsForButtons.json', datas);
+			fs.writeFileSync(configPath + 'bfb/bitsForButtons.json', datas);
 		}
 		
-		var bfb = JSON.parse(fs.readFileSync(configPath + 'bitsForButtons.json'));
+		var bfb = JSON.parse(fs.readFileSync(configPath + 'bfb/bitsForButtons.json'));
 		let obj = {};
 		obj.amounts = bfb.amount;
 		obj.buttons = bfb.button;
@@ -25,6 +27,6 @@ router.get("/loadbfb", function(req, res) {
 	} catch (error) {
 		fs.appendFileSync(logPath, 'Ran into an error trying to load bits for buttons settings\n');
 		fs.appendFileSync(logPath, '\tError: ' + error.message + '\n');
-		sayToChannel('Sorry, but I ran into an issue trying to load bits for buttons settings. Please see the log.');
+		support.sayToChannel('Sorry, but I ran into an issue trying to load bits for buttons settings. Please see the log.');
 	}
 });

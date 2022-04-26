@@ -1,3 +1,5 @@
+support = require('./supportFunctions.js');
+
 function pressTheButton(button) {
 	try {
 		if (button.includes("mouse")) {
@@ -12,7 +14,7 @@ function pressTheButton(button) {
 		fs.appendFileSync(logPath, 'Ran into an error trying to press the button: ' + button + '\n');
 		fs.appendFileSync(logPath, '\tError: ' + error.message + '\n');
 		
-		sayToChannel('Sorry, but I ran into an issue trying to press that button! ' +
+		support.sayToChannel('Sorry, but I ran into an issue trying to press that button! ' +
 			'Please make sure you set it up correctly and test with !bittest command.'
 		);
 	}
@@ -89,12 +91,12 @@ function handleBFBCheered(userstate)
 		var obj = getCommandByBits(userstate.bits);
 		if (bitsForButtonsOn) {
 			obj["func"]();
-			sayToChannel("Thanks " + userstate.username + " for using " + userstate.bits + " bits for " + obj.commandName);
+			support.sayToChannel("Thanks " + userstate.username + " for using " + userstate.bits + " bits for " + obj.commandName);
 		}
 	} catch (error) {
 		fs.appendFileSync(logPath, 'Ran into an error trying to get cheer info: \n');
 		fs.appendFileSync(logPath, '\tError: ' + error.message + '\n');
-		sayToChannel('Sorry, but I ran into an issue handling that cheer. Please check the log.');
+		support.sayToChannel('Sorry, but I ran into an issue handling that cheer. Please check the log.');
 	}
 }
 
@@ -129,7 +131,7 @@ function getBitsForButtonsDescriptions() {
 function bfbReminder()
 {
 	if (bitsForButtonsOn) {
-		sayToChannel('If you would like to mess with ' + 
+		support.sayToChannel('If you would like to mess with ' + 
 			loginClass.channel + 
 			' , you can donate bits to effect his game! ' +
 			getBitsForButtonsDescriptions()

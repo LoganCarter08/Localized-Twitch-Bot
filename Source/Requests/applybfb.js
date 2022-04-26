@@ -1,3 +1,5 @@
+support = require('../supportFunctions.js');
+
 router.get("/applybfb", function(req, res) {
 	try {
 		// let's make an ugly string for each data type
@@ -17,10 +19,10 @@ router.get("/applybfb", function(req, res) {
 
 		datas = JSON.stringify(datas);
 		fs.appendFileSync(logPath, 'Applying new bfb settings: ' + datas + '\n');
-		fs.writeFileSync(configPath + 'bitsForButtons.json', datas);
+		fs.writeFileSync(configPath + 'bfb/bitsForButtons.json', datas);
 	} catch (error) {
 		fs.appendFileSync(logPath, 'Ran into an error trying to apply bits for buttons settings\n');
 		fs.appendFileSync(logPath, '\tError: ' + error.message + '\n');
-		sayToChannel('Sorry, but I ran into an issue trying to set the bits for buttons settings. Please see the log.');
+		support.sayToChannel('Sorry, but I ran into an issue trying to set the bits for buttons settings. Please see the log.');
 	}
 });
