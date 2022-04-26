@@ -1,5 +1,3 @@
-support = require('../supportFunctions.js');
-
 // this is for debugging purposes. We need to create a generic tags object or store real ones for a unit test 
 function onMessage(message, tags) {
 	if (!message.startsWith('!')) {

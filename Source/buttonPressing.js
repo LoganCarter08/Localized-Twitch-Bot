@@ -1,6 +1,4 @@
-support = require('./supportFunctions.js');
-
-function pressTheButton(button) {
+const pressTheButton = function pressTheButton(button) {
 	try {
 		if (button.includes("mouse")) {
 			robot.mouseClick(button.split("_")[1]);
@@ -27,7 +25,7 @@ function pressTheButton(button) {
 	for a callback to be done and adds some flexibility 
 	in the future. 
 */
-function getCommandByBits(bits) {
+const getCommandByBits = function getCommandByBits(bits) {
 	// retreive the json file results
 	var bfb = JSON.parse(fs.readFileSync(configPath + 'bitsForButtons.json'));
 	amounts = bfb.amount.split('`');
@@ -84,7 +82,7 @@ function getCommandByBits(bits) {
 //var obj = getCommandByBits(11);
 //obj["func"]();
 
-function handleBFBCheered(userstate) 
+const handleBFBCheered = function handleBFBCheered(userstate) 
 {
 	try {
 		fs.appendFileSync(logPath, userstate.username + ' has cheered ' + userstate.bits + 'bits\n');
@@ -100,7 +98,7 @@ function handleBFBCheered(userstate)
 	}
 }
 
-function getBitsForButtonsDescriptions() {
+const getBitsForButtonsDescriptions = function getBitsForButtonsDescriptions() {
 	// add a way to output these in order of bit value least to greatest
 	try {
 		var bfb = JSON.parse(fs.readFileSync(configPath + 'bitsForButtons.json'));
@@ -128,7 +126,7 @@ function getBitsForButtonsDescriptions() {
 	}
 }
 
-function bfbReminder()
+const bfbReminder = function bfbReminder()
 {
 	if (bitsForButtonsOn) {
 		support.sayToChannel('If you would like to mess with ' + 
@@ -138,3 +136,5 @@ function bfbReminder()
 		);
 	}
 }
+
+module.exports = { bfbReminder, getBitsForButtonsDescriptions, handleBFBCheered, getCommandByBits, pressTheButton }

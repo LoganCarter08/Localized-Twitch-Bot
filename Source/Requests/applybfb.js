@@ -1,5 +1,3 @@
-support = require('../supportFunctions.js');
-
 router.get("/applybfb", function(req, res) {
 	try {
 		// let's make an ugly string for each data type

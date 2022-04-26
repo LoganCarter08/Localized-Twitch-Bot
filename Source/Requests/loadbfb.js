@@ -1,5 +1,3 @@
-support = require('../supportFunctions.js');
-
 router.get("/loadbfb", function(req, res) {
 	// add the ability to create presets for different games
 	try {

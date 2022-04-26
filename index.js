@@ -34,7 +34,8 @@ loginClass = '';
 DEBUG = false;
 
 // import our supporting code 
-require('./Source/buttonPressing.js');
+support = require('./Source/supportFunctions.js');
+buttonPressing = require('./Source/buttonPressing.js');
 require('./Source/login.js');
 require('./Source/Twitch_Events/onCheer.js');
 require('./Source/Twitch_Events/onSubscription.js');
@@ -47,9 +48,6 @@ require('./Source/Requests/login.js');
 require('./Source/Requests/status.js');
 require('./Source/Requests/togglebfb.js');
 require('./Source/Requests/updatelogin.js');
-
-
-
 
 
 // output periodic messages
